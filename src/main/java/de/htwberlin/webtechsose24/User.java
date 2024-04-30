@@ -1,8 +1,5 @@
 package de.htwberlin.webtechsose24;
 
-
-
-
 public class User {
 
 

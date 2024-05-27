@@ -1,15 +1,18 @@
 package de.htwberlin.webtechsose24;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.*;
 
 @RestController
+@CrossOrigin(origins = {"https://minesweeper-sidoma.onrender.com"})
 public class Controller {
 
     @GetMapping("/")
     public List<User> index() {
+        //test
         User entry = new User("Test", "Test");
         User entry1 = new User("Test1", "Test");
         User entry2 = new User("Test2", "Test");

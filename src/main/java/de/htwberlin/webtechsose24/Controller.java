@@ -13,12 +13,10 @@ public class Controller {
     @GetMapping("/")
     public List<User> index() {
         //test
-        User entry = new User("Test", "Test");
-        User entry1 = new User("Test1", "Test");
-        User entry2 = new User("Test2", "Test");
-        User entry3 = new User("Test3", "Test");
-        User entry4 = new User("Test4", "Test");
-        return List.of(entry, entry1, entry2, entry3, entry4);
+        User entry = new User("test");
+        User entry1 = new User("test1");
+        User entry2 = new User("test2");
+        return List.of(entry, entry1, entry2);
     }
 
 }

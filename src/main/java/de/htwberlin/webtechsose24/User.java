@@ -1,7 +1,7 @@
 package de.htwberlin.webtechsose24;
 
 import jakarta.persistence.*;
-import lombok.Data;
+
 
 
 @Entity

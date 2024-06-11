@@ -1,34 +1,31 @@
 package de.htwberlin.webtechsose24;
 
+import jakarta.persistence.*;
+import lombok.Data;
+
+
+@Entity
+@Table(name = "user")
 public class User {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
 
-    private String username;
-    private String email;
+    private String name;
+    // Hibernate expects entities to have a no-arg constructor,
+    // though it does not necessarily have to be public.
+    private User() {}
 
-
-    public User(String username, String email) {
-        this.username = username;
-        this.email = email;
+    public User(String name) {
+        this.name = name;
     }
 
-
-    public String getUsername() {
-        return username;
+    public Integer getId() {
+        return this.id;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public String getName() {
+        return this.name;
     }
-
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-
 }

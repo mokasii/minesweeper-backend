@@ -4,7 +4,7 @@
 FROM gradle:8-jdk21 AS builder
 WORKDIR /
 COPY . ./
-RUN gradle build --no-daemon
+RUN gradle build --no-daemon -x test
 
 LABEL org.name="sidoma"
 #

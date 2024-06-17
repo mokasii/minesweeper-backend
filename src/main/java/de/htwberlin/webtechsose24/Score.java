@@ -11,7 +11,7 @@ import lombok.*;
 public class Score {
 
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String nickName;

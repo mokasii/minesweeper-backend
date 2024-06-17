@@ -2,9 +2,6 @@ package de.htwberlin.webtechsose24.controller;
 
 import de.htwberlin.webtechsose24.Score;
 import de.htwberlin.webtechsose24.repository.ScoreRepository;
-import de.htwberlin.webtechsose24.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -27,7 +24,7 @@ public class ScoreController {
 
     @PostMapping
     public Score addScore(@RequestBody Score score) {
-        System.out.println("received score: " + score.getName() + " " + score.getTimeInSeconds() + " " + score.getDifficulty() );
+        System.out.println("received score: " + score.getNickName() + " " + score.getTimeInSeconds() + " " + score.getDifficulty() );
         return scoreRepository.save(score);
     }
 }

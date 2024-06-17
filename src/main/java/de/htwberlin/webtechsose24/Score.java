@@ -15,14 +15,14 @@ public class Score {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String name;
+    private String nickName;
     private int timeInSeconds;
     private String difficulty;
 
     public Score() {}
 
     public Score(String nickName, int timeInSeconds, String difficulty) {
-        this.name = nickName;
+        this.nickName = nickName;
         this.timeInSeconds = timeInSeconds;
         this.difficulty = difficulty;
     }

@@ -1,9 +1,11 @@
 package de.htwberlin.webtechsose24;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 
-
+@Getter
+@Setter
 @Entity
 @Table(name = "userTable")
 public class User {
@@ -19,13 +21,5 @@ public class User {
 
     public User(String name) {
         this.name = name;
-    }
-
-    public Integer getId() {
-        return this.id;
-    }
-
-    public String getName() {
-        return this.name;
     }
 }

@@ -1,7 +1,7 @@
 package de.htwberlin.webtechsose24;
 
 import jakarta.persistence.*;
-import lombok.*;;
+import lombok.*;
 
 
 @Getter
@@ -15,14 +15,14 @@ public class Score {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String nickName;
+    private String name;
     private int timeInSeconds;
     private String difficulty;
 
     public Score() {}
 
     public Score(String nickName, int timeInSeconds, String difficulty) {
-        this.nickName = nickName;
+        this.name = nickName;
         this.timeInSeconds = timeInSeconds;
         this.difficulty = difficulty;
     }

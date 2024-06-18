@@ -2,6 +2,7 @@ package de.htwberlin.webtechsose24.controller;
 
 import de.htwberlin.webtechsose24.Score;
 import de.htwberlin.webtechsose24.repository.ScoreRepository;
+import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,7 +20,7 @@ public class ScoreController {
 
     @GetMapping
     public List<Score> getAllScores() {
-        return scoreRepository.findAll();
+        return scoreRepository.findAll(Sort.by(Sort.Direction.ASC, "timeInSeconds"));
     }
 
     @PostMapping

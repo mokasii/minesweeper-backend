@@ -25,7 +25,6 @@ public class ScoreController {
 
     @PostMapping
     public Score addScore(@RequestBody Score score) {
-        System.out.println("received score: " + score.getNickName() + " " + score.getTimeInSeconds() + " " + score.getDifficulty() );
         return scoreRepository.save(score);
     }
 }

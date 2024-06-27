@@ -28,6 +28,10 @@ public class Score {
         this.nickname = nickname;
         this.timeInSeconds = timeInSeconds;
         this.difficulty = difficulty;
+    }
+
+    @PrePersist
+    public void prePersist() {
         this.createdAt = LocalDateTime.now();
     }
 

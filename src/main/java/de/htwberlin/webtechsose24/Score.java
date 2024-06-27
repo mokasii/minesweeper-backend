@@ -2,6 +2,7 @@ package de.htwberlin.webtechsose24;
 
 import jakarta.persistence.*;
 import lombok.*;
+import java.time.LocalDateTime;
 
 
 @Getter
@@ -17,6 +18,9 @@ public class Score {
     private String nickname;
     private int timeInSeconds;
     private String difficulty;
+    private LocalDateTime createdAt;
+
+
 
     public Score() {}
 
@@ -24,6 +28,7 @@ public class Score {
         this.nickname = nickname;
         this.timeInSeconds = timeInSeconds;
         this.difficulty = difficulty;
+        this.createdAt = LocalDateTime.now();
     }
 
 }

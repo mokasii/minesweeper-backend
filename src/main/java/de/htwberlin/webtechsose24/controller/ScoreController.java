@@ -42,6 +42,24 @@ public class ScoreController {
         return scoreRepository.findByCreatedAtAfterAndDifficulty(oneMonthAgo, difficulty);
     }
 
+    @GetMapping("/day")
+    public List<Score> getScoresLastDay() {
+        LocalDateTime oneDayAgo = LocalDateTime.now().minusDays(1);
+        return scoreRepository.findByCreatedAtAfter(oneDayAgo);
+    }
+
+    @GetMapping("/week")
+    public List<Score> getScoresLastWeek() {
+        LocalDateTime oneWeekAgo = LocalDateTime.now().minusWeeks(1);
+        return scoreRepository.findByCreatedAtAfter(oneWeekAgo);
+    }
+
+    @GetMapping("/month")
+    public List<Score> getScoresLastMonth() {
+        LocalDateTime oneMonthAgo = LocalDateTime.now().minusMonths(1);
+        return scoreRepository.findByCreatedAtAfter(oneMonthAgo);
+    }
+
     @PostMapping
     public Score addScore(@RequestBody Score score) {
         return scoreRepository.save(score);

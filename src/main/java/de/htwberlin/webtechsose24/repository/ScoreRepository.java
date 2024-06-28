@@ -9,5 +9,6 @@ import java.util.List;
 
 @Repository
 public interface ScoreRepository extends JpaRepository<Score, Long> {
-    List<Score> findByCreatedAtAfterAndDifficulty(LocalDateTime date, String difficulty);
+    List<Score> findByCreatedAtAfter(LocalDateTime createdAt);
+    List<Score> findByCreatedAtAfterAndDifficulty(LocalDateTime createdAt, String difficulty);
 }

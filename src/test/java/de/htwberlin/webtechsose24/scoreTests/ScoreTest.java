@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
+import java.time.temporal.TemporalUnit;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -26,7 +28,8 @@ public class ScoreTest {
         assertEquals("test", score.getNickname());
         assertEquals(10, score.getTimeInSeconds());
         assertEquals("easy", score.getDifficulty());
-        assertEquals(LocalDateTime.now(), score.getCreatedAt());
+
+        assertEquals(LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES), score.getCreatedAt().truncatedTo(ChronoUnit.MINUTES));
     }
 
 }
